@@ -1,0 +1,24 @@
+# if the user agent is a crawler, is_crawler = 1
+SetEnvIfNoCase User-Agent "facebookexternalhit/*|LinkedInBot/*|facebookcatalog/*|WhatsApp/*" is_crawler=1
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # If is_crawler = 1, redirect/rewrite to seo.php
+    RewriteCond %{ENV:is_crawler} 1
+    RewriteRule ^$ seo.php [L,QSA]
+
+    # The same here, redirect/rewrite index.html to seo.php
+    RewriteCond %{ENV:is_crawler} 1
+    RewriteRule ^index\.html$ seo.php [L,QSA]
+
+    # Normal requests. Only necessary if you have a static website and have urls like /about-us, /contact-us, etc.
+    # This is typical for static websites.
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+
+
+</IfModule>

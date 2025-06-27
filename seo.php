@@ -15,14 +15,13 @@ if (!empty($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/') {
 
 # Adding other parameters to specify the data I need. 
 # For example: articles don't need an extra SEO data, because they already have title, description, etc.
-# Here I'm adding the type of content and the article id, so the API code knows where to find it (SEO table or Articles table).
-# etc.
+# Here I'm adding the type of content and the article id, so the API code will know what to do and where to find it (SEO table or Articles table, etc).
 if (strpos( $path, 'blog/detail') !== false) {
     $url = explode('/', $path);
     $getUrl = "seo?type=article&id=" . $url[2];
 }
 else {
-    # For statics pages, like Home, About Us, Contact Us, etc.
+    # For statics pages, like Home, About Us, Contact Us, etc. Just need to use $path as parameter.
     $getUrl = "seo?path=$path";
 }
 
