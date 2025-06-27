@@ -1,0 +1,8 @@
+# This is a example of .env file. Copy this file to .env and fill the values according to your project.
+
+# URL where you get the data from
+API_URL=http://project.localhost/api/
+
+
+# Base URL for SEO response (where your content is)
+BASE_URL=https://seo-bots-example.localhost
