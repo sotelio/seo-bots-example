@@ -1,4 +1,3 @@
 # SEO BOTS EXAMPLE
 
-This is an example repository, to demonstrate a way to respond to bot requests, when the site uses javascript to show the content. 
-Using this way allows you to specify what data, bots like whatsapp, facebook, etc. receive and show to users when an url is shared.
+This is an example repository that demonstrates how to handle bot requests when a site uses JavaScript to display content. This approach allows you to control what data bots—such as WhatsApp, Facebook, and others—receive and display to users when a URL is shared.
